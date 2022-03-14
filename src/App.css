@@ -47,3 +47,7 @@
    margin-left: 8px;
    font-size:15px;
 }
+.bg-image{
+   background: rgb(201,251,63);
+   background-image: radial-gradient(circle, #5c0067 0%, #00d4ff 100%);
+}

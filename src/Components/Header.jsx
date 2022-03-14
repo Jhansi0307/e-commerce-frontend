@@ -35,7 +35,7 @@ function Header(props) {
               </button>
               <div className="collapse navbar-collapse" id="nav-con">
                 <div className="d-flex justify-content-sm-start justify-content-lg-end w-100 ">
-                <div style={{marginLeft:'1rem',marginTop:'0.4rem',marginRight:'1rem',}}>
+                <div style={{marginLeft:'3rem',marginTop:'0.4rem',marginRight:'1rem', textAlign:'center'}}>
                     Welcome <strong>{userData.name}</strong>
                   </div>
                   <Link to="/cart">
@@ -49,7 +49,7 @@ function Header(props) {
                     </div>
                   </Link>
                   <div style={{marginTop:'0.1rem',margin:5}}>
-                    <button onClick={handleLogout} className="ms-sm-4  ms-md-4 me-3 px-2 btn btn-dark" style={{height: '40px'}}>Logout</button>
+                    <button onClick={handleLogout} className="ms-sm-1  ms-md-4 me-3 px-2 btn" style={{height: '42px',backgroundColor:"grey"}}>Logout</button>
                   </div>
                 </div>
               </div>

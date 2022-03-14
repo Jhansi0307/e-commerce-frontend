@@ -25,7 +25,7 @@ function MainContent(props) {
                     sale
                   </span>
                 ) : null}
-                <img src={i.image.empty} alt="" className="rounded-top" />
+                <img src={i.image} alt="" className="rounded-top" />
                 <div className="card-body">
                   <h5 className="card-title p-1 fw-bold">{i.name}</h5>
                   {i.star ? (
@@ -36,7 +36,8 @@ function MainContent(props) {
                     <br />
                   )}
 
-                  <p className="card-text">{i.price}</p>
+                  <p className="card-text">Price:{i.price}</p>
+                  <p className="card-text">Fabric:{i.fabric}</p>
                   <span
                     className="mt-5 position-relative"
                     onClick={() => handleChange(i.id)}
