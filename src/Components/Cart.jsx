@@ -80,7 +80,7 @@ function Cart(props) {
                     <button className="btn btn-secondary rounded-pill px-5 py-2 m-2">
                       Checkout
                     </button> <br /> <br/>
-                    <Link to='/'>Continue Purchasing</Link>
+                    <Link to='/userhome'>Continue Purchasing</Link>
                   </td>
                 </tr>
               </tbody>
@@ -89,7 +89,7 @@ function Cart(props) {
             <div>
               Your Cart is Empty <br />
               <br />
-              <Link to="/">Click to Purchase Products</Link>
+              <Link to="/userhome">Click to Purchase Products</Link>
             </div>
           )}
         </div>

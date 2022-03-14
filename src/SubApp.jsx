@@ -4,6 +4,10 @@ import data from "./Components/Data";
 import Cart from "./Components/Cart";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import Home from "./Components/Home";
+
 function SubApp() {
   const { product } = data;
   const [cartItem, setCartItem] = useState([0]);
@@ -36,12 +40,14 @@ function SubApp() {
     setCartItem(cartItem.filter((x) => x.id !== val.id));
   };
   const value = cartItem.reduce((a, b) => b.qty + a);
+  console.log(cartItem);
   return (
     <>
       <BrowserRouter>
         <Routes>
+        <Route path='/' element={<Home/>}/>
           <Route
-            path="/"
+            path="/userhome"
             element={
               <App
                 cartVal={value}
@@ -53,6 +59,8 @@ function SubApp() {
               />
             }
           />
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
           <Route
             path="/cart"
             element={
@@ -64,6 +72,7 @@ function SubApp() {
               />
             }
           />
+          
         </Routes>
       </BrowserRouter>
     </>

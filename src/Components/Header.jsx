@@ -1,18 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 import menu from "../img/menu.png";
 import shopping_cart from "../img/shopping-cart.png";
+import { decodeToken } from 'react-jwt';
 function Header(props) {
+  const navigate = useNavigate()
   const { cartVal, handleCartBox } = props;
+  const token = localStorage.getItem('user-token')
+  const userData = decodeToken(token)
 
+  const handleLogout=()=>{
+    localStorage.removeItem('user-token')
+    navigate('/')
+  }
   return (
     <div className="bg-light fixed-top">
       <div className="container">
         <header>
           <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid">
-              <p className="my-auto fs-5 head-title">Shopping</p>
+              <p className="my-auto fs-5 head-title"><Link to='/' style={{textDecoration: 'none',color: 'black'}}>
+                  Shopping
+                  </Link></p>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -24,28 +34,10 @@ function Header(props) {
                 </span>
               </button>
               <div className="collapse navbar-collapse" id="nav-con">
-                <ul className="navbar-nav mx-2">
-                  <li className="nav-item py-2 mx-3 head-title">Home</li>
-                  <li className="nav-item py-2 mx-3">About</li>
-                  <li
-                    className="nav-item drop-down py-2 mx-3"
-                    id="shop-item"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                  >
-                    Shop&#8595;
-                  </li>
-
-                  <ul className="dropdown-menu ">
-                    <li className="dropdown-item">All Products</li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li className="dropdown-item">Popular Items</li>
-                    <li className="dropdown-item">New Arrivals</li>
-                  </ul>
-                </ul>
-                <div className="d-flex justify-content-sm-start justify-content-lg-end w-75 ">
+                <div className="d-flex justify-content-sm-start justify-content-lg-end w-100 ">
+                <div style={{marginLeft:'1rem',marginTop:'0.4rem',marginRight:'1rem',}}>
+                    Welcome <strong>{userData.name}</strong>
+                  </div>
                   <Link to="/cart">
                     <div
                       onClick={handleCartBox}
@@ -56,6 +48,9 @@ function Header(props) {
                       <span className="badge bg-dark ms-2">{cartVal}</span>
                     </div>
                   </Link>
+                  <div style={{marginTop:'0.1rem',margin:5}}>
+                    <button onClick={handleLogout} className="ms-sm-4  ms-md-4 me-3 px-2 btn btn-dark" style={{height: '40px'}}>Logout</button>
+                  </div>
                 </div>
               </div>
             </div>
