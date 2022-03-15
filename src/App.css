@@ -51,3 +51,7 @@
    background: rgb(201,251,63);
    background-image: radial-gradient(circle, #5c0067 0%, #00d4ff 100%);
 }
+.bg-image1{
+   background: rgb(49, 106, 107);
+background: linear-gradient(80deg, rgb(77, 170, 172) 0%, rgb(61, 28, 51) 100%);
+}
