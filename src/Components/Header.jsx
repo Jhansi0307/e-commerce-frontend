@@ -40,7 +40,7 @@ function Header(props) {
                   <div
                     style={{
                       marginLeft: "3rem",
-                      marginTop: "2rem",
+                      marginTop: "0.5rem",
                       marginRight: "1rem",
                       textAlign: "center",
                     }}

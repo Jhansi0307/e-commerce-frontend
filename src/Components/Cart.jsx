@@ -77,9 +77,11 @@ function Cart(props) {
                 </tr>
                 <tr>
                   <td colSpan={4}>
+                    <Link to="/checkout">
                     <button className="btn btn-secondary rounded-pill px-5 py-2 m-2">
                       Checkout
                     </button> <br /> <br/>
+                    </Link>
                     <Link to='/userhome'>Continue Purchasing</Link>
                   </td>
                 </tr>

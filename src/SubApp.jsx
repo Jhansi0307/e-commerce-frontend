@@ -7,6 +7,7 @@ import App from "./App";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Home from "./Components/Home";
+import Checkout from "./Components/Checkout1";
 
 function SubApp() {
   const { product } = data;
@@ -60,6 +61,7 @@ function SubApp() {
             }
           />
           <Route path='/login' element={<Login/>}/>
+          <Route path="/checkout" element={<Checkout/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route
             path="/cart"
