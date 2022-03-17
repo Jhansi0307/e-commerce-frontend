@@ -8,6 +8,7 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Home from "./Components/Home";
 import Checkout from "./Components/Checkout1";
+import Show from "./Components/Show";
 
 function SubApp() {
   const { product } = data;
@@ -74,7 +75,7 @@ function SubApp() {
               />
             }
           />
-          
+          <Route path='/show' element={<Show/>}/>
         </Routes>
       </BrowserRouter>
     </>

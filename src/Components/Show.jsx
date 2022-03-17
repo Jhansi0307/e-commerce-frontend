@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
-function MainContent(props) {
+function Show(props) {
   const { product, onAddCart, cartItem, onRemoveCart, onRemoveWholeCart } =
     props;
 
@@ -20,7 +20,7 @@ function MainContent(props) {
               key={i.id}
               className="col-xl-3 col-lg-3 col-md-4 col-sm-6 text-center rounded-3 mb-5"
             >
-              {/* <Link to="/show" style={{textDecoration: "none"}} target="_blank" > */}
+              <Link to="/show" style={{textDecoration: "none"}} target="_blank" >
                 <div className="card h-100">
                   {i.sale ? (
                     <span className="badge bg-dark position-absolute sale">
@@ -90,7 +90,7 @@ function MainContent(props) {
                     </span>
                   </div>
                 </div>
-              {/* </Link> */}
+              </Link>
             </div>
           ))}
         </div>
@@ -99,4 +99,4 @@ function MainContent(props) {
   );
 }
 
-export default MainContent;
+export default Show;
